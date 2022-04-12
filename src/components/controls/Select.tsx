@@ -2,6 +2,14 @@ import { Fragment, InputHTMLAttributes } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 
+export type ChangeEventType = {
+  target: {
+    value: any;
+    name?: string;
+    type: string;
+  };
+};
+
 interface IProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   value?: any;
@@ -9,7 +17,7 @@ interface IProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   name?: string;
   optionLabelKey?: string;
-  onChange?: ({}) => void;
+  onChange?: (event: ChangeEventType) => void;
   error?: boolean;
   helperText?: string;
   inputStyles?: string;
