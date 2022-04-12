@@ -1,9 +1,16 @@
 import React from "react";
 import InputField from "./controls/InputField";
 
-import Select from "./controls/Select";
+import Select, { ChangeEventType } from "./controls/Select";
+import { CategoryType } from "./ProductList";
 
-function ProductFilterBar() {
+export interface IProps {
+  categories: CategoryType[];
+  onChnage: (event: ChangeEventType) => void;
+  selectedCategory?: CategoryType;
+}
+
+function ProductFilterBar({ categories, onChnage, selectedCategory }: IProps) {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between w-full">
       <InputField
@@ -13,8 +20,10 @@ function ProductFilterBar() {
       <Select
         placeholder="Categories"
         className="w-60"
-        value="Apple"
-        options={["Apple", "Samgsung"]}
+        options={categories}
+        optionLabelKey="name"
+        onChange={onChnage}
+        value={selectedCategory}
       />
     </div>
   );
