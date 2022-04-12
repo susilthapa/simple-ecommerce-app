@@ -8,15 +8,15 @@ interface Iprops {
   product: ProductType;
 }
 function ProductCard({ product }: Iprops) {
-  const { name, price, id } = product;
+  const { name, price, id, avatar } = product;
   return (
     <div className="w-28">
-      <Link to="/">
+      <Link to={`/${id}`}>
         <div className="group w-full h-32 bg-white rounded-lg p-3 flex items-center">
           <img
-            src={WatchImg}
+            src={avatar}
             alt="watch"
-            className="w-full h-auto group-hover:scale-110 transition"
+            className="w-full max-h-full group-hover:scale-110 transition"
           />
         </div>
       </Link>
