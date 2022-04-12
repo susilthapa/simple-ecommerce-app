@@ -1,6 +1,6 @@
 import Axios from "./Axios";
 
-import type { ProductType } from "../components/ProductList";
+import type { CategoryType, ProductType } from "../components/ProductList";
 
 export const getProducts = async () => {
   try {
@@ -12,10 +12,29 @@ export const getProducts = async () => {
         price: product.price,
         description: product.description,
         avatar: product.avatar,
+        category: product.category,
       })
     );
     return { status: true, data: productList };
   } catch (error) {
     return { status: false };
+  }
+};
+
+export const getCategories = async (): Promise<{
+  status: boolean;
+  data: CategoryType[];
+}> => {
+  try {
+    const response = await Axios("/categories");
+    const categoryList: CategoryType[] = response.data.map(
+      (product: CategoryType) => ({
+        id: product.id,
+        name: product.name,
+      })
+    );
+    return { status: true, data: categoryList };
+  } catch (error) {
+    return { status: false, data: [] };
   }
 };
