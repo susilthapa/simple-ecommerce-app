@@ -2,7 +2,7 @@ import React from "react";
 
 import WatchImg from "../assets/images/watch.jpeg";
 
-function ItemCard() {
+function ProductCard() {
   return (
     <div className="w-28">
       <div className="w-full h-32 bg-white rounded-lg p-3 flex items-center">
@@ -18,4 +18,4 @@ function ItemCard() {
   );
 }
 
-export default ItemCard;
+export default ProductCard;

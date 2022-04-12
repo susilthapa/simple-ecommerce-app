@@ -3,9 +3,9 @@ import InputField from "./controls/InputField";
 
 import Select from "./controls/Select";
 
-function ItemsFilterBar() {
+function ProductFilterBar() {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between w-full mt-10 2xl:mt-13">
+    <div className="flex flex-col md:flex-row items-center justify-between w-full">
       <InputField
         className="w-80"
         placeholder="Apple Watch, samgsung S21, Mackbook Pro..."
@@ -20,4 +20,4 @@ function ItemsFilterBar() {
   );
 }
 
-export default ItemsFilterBar;
+export default ProductFilterBar;
