@@ -21,6 +21,23 @@ export const getProducts = async () => {
   }
 };
 
+export const getProduct = async (id: string) => {
+  try {
+    const response = await Axios(`/products/${id}`);
+    const product: ProductType = {
+      id: response.data.id,
+      name: response.data.name,
+      price: response.data.price,
+      description: response.data.description,
+      avatar: response.data.avatar,
+      category: response.data.category,
+    };
+    return { status: true, data: product };
+  } catch (error) {
+    return { status: false };
+  }
+};
+
 export const getCategories = async (): Promise<{
   status: boolean;
   data: CategoryType[];
