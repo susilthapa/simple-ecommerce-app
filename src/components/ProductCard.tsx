@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import WatchImg from "../assets/images/watch.jpeg";
 import { ProductType } from "./ProductList";
 
 interface Iprops {

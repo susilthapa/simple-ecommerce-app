@@ -5,6 +5,7 @@ import ProductList from "./components/ProductList";
 
 import Navbar from "./components/Navbar";
 import CreateProductForm from "./components/CreateProductForm";
+import ProductDetails from "./components/ProductDetails";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ProductList />} />
           <Route path="/create-product" element={<CreateProductForm />} />
+          <Route path="/:productId" element={<ProductDetails />} />
         </Routes>
       </div>
     </Router>
