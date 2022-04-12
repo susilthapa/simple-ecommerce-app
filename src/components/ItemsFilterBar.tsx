@@ -5,7 +5,7 @@ import Select from "./controls/Select";
 
 function ItemsFilterBar() {
   return (
-    <div className="flex  items-center justify-between w-full mt-10 2xl:mt-13">
+    <div className="flex flex-col md:flex-row items-center justify-between w-full mt-10 2xl:mt-13">
       <InputField
         className="w-80"
         placeholder="Apple Watch, samgsung S21, Mackbook Pro..."
