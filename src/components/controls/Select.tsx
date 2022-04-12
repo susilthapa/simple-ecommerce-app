@@ -55,7 +55,7 @@ const Select: React.FC<IProps> = ({
           </Listbox.Label>
           <div className={`mt-1 relative ${className}`}>
             <Listbox.Button
-              className={`shadow-lg relative w-full bg-primary  outline-0  border-gray-inputBorder rounded-lg  pl-3 pr-10 py-2.5 text-left cursor-default focus:outline-none focus:ring-gray-300 focus:border-gray-300 sm:text-sm font-medium ${
+              className={`shadow-lg relative w-full bg-primary  outline-0  border-gray-inputBorder rounded-lg  pl-3 pr-10 py-2.5 text-left cursor-default focus:outline-none focus:ring-gray-300 focus:border-gray-300 sm:text-sm  ${
                 disabled ? "!bg-gray-lightest" : ""
               } ${
                 error ? "!border-red focus:ring-red focus:border-red " : ""
