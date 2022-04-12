@@ -55,7 +55,7 @@ const Select: React.FC<IProps> = ({
           </Listbox.Label>
           <div className={`mt-1 relative ${className}`}>
             <Listbox.Button
-              className={`shadow-lg relative w-full bg-primary  outline-0  border-gray-inputBorder rounded-lg  pl-3 pr-10 py-2.5 text-left cursor-default focus:outline-none focus:ring-gray-300 focus:border-gray-300 sm:text-sm  ${
+              className={`shadow-lg relative w-full bg-white  outline-0  border-gray-inputBorder rounded-lg  pl-3 pr-10 py-2.5 text-left cursor-default focus:outline-none focus:ring-gray-300 focus:border-gray-300 sm:text-sm  ${
                 disabled ? "!bg-gray-lightest" : ""
               } ${
                 error ? "!border-red focus:ring-red focus:border-red " : ""
@@ -101,7 +101,7 @@ const Select: React.FC<IProps> = ({
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Listbox.Options className="absolute z-40 mt-1 w-full bg-primary shadow-lg max-h-56 rounded-sm py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
+              <Listbox.Options className="absolute z-40 mt-1 w-full bg-white shadow-lg max-h-56 rounded-sm py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
                 {options.map((item, index) => (
                   <Listbox.Option
                     key={`option-${index}`}

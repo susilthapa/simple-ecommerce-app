@@ -27,7 +27,7 @@ const InputField: React.FC<IProps> = ({
         <label className="block text-gray-dark text-xs mb-1">{label}</label>
       )}
       <input
-        className={`appearance-none shadow-lg border-gray-inputBorder bg-primary 
+        className={`appearance-none shadow-lg border-gray-inputBorder bg-white 
                      rounded-lg w-full py-2.5 px-3 ${
                        type === "file" ? "!py-2" : ""
                      } text-gray-900 text-xs 
