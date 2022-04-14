@@ -19,6 +19,7 @@ function ProductFilterBar({ categories, onChnage, selectedCategory }: IProps) {
       />
       <Select
         placeholder="Categories"
+        name="categories"
         className="w-60"
         options={categories}
         optionLabelKey="name"

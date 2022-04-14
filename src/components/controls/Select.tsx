@@ -5,7 +5,7 @@ import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 export type ChangeEventType = {
   target: {
     value: any;
-    name?: string;
+    name: string;
     type: string;
   };
 };
@@ -15,7 +15,7 @@ interface IProps extends InputHTMLAttributes<HTMLInputElement> {
   value?: any;
   options: any[];
   className?: string;
-  name?: string;
+  name: string;
   optionLabelKey?: string;
   onChange?: (event: ChangeEventType) => void;
   error?: boolean;
