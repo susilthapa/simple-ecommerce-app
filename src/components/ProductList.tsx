@@ -3,7 +3,11 @@ import React, { useEffect, useState } from "react";
 import CreateProductIcon from "./CreateProductIcon";
 import ProductCard from "./ProductCard";
 import ProductFilterBar from "./ProductFilterBar";
-import { getCategories, getProducts } from "../shared/apiHelpers";
+import {
+  getCategories,
+  getProducts,
+  deleteProduct,
+} from "../shared/apiHelpers";
 import Spinner from "../shared/components/Spinner";
 import { ChangeEventType } from "./controls/Select";
 
@@ -32,7 +36,12 @@ function ProductList() {
     setSelectedCategory(value);
   };
 
-  console.log({ selectedCategory, products });
+  const handleProductDelete = async (productId: string) => {
+    const { status } = await deleteProduct(productId);
+    if (status) {
+      setProducts(products?.filter(({ id }) => id !== productId));
+    }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -63,10 +72,18 @@ function ProductList() {
           ? products
               ?.filter(({ category }) => category === selectedCategory.name)
               .map((product) => (
-                <ProductCard key={product.id} product={product} />
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  handleProductDelete={handleProductDelete}
+                />
               ))
           : products?.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard
+                key={product.id}
+                product={product}
+                handleProductDelete={handleProductDelete}
+              />
             ))}
       </div>
       <CreateProductIcon />

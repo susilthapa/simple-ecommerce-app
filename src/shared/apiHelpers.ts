@@ -65,8 +65,16 @@ export type PypeProductPayloadType = {
 };
 export const createProduct = async (payload: PypeProductPayloadType) => {
   try {
-    const response = await Axios.post("/products", payload);
-    console.log({ response });
+    await Axios.post("/products", payload);
+    return { status: true };
+  } catch (error) {
+    return { status: false };
+  }
+};
+
+export const deleteProduct = async (productId: string) => {
+  try {
+    await Axios.delete(`/products/${productId}`);
     return { status: true };
   } catch (error) {
     return { status: false };
