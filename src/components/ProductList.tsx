@@ -58,7 +58,7 @@ function ProductList() {
         onChnage={handleCategoryFilter}
         selectedCategory={selectedCategory}
       />
-      <div className="mt-12 w-11/12 md:w-1/2 m-auto flex flex-wrap gap-9">
+      <div className="mt-12 w-11/12 md:w-1/2 m-auto flex flex-wrap gap-9 justify-center">
         {selectedCategory
           ? products
               ?.filter(({ category }) => category === selectedCategory.name)
