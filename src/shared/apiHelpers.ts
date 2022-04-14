@@ -55,3 +55,20 @@ export const getCategories = async (): Promise<{
     return { status: false, data: [] };
   }
 };
+
+export type PypeProductPayloadType = {
+  name: string;
+  price: string;
+  description: string;
+  avatar: string;
+  category: string;
+};
+export const createProduct = async (payload: PypeProductPayloadType) => {
+  try {
+    const response = await Axios.post("/products", payload);
+    console.log({ response });
+    return { status: true };
+  } catch (error) {
+    return { status: false };
+  }
+};
