@@ -5,7 +5,7 @@ import InputField from "./controls/InputField";
 import Select from "./controls/Select";
 import TextArea from "./controls/TextArea";
 import type { ChangeEventType } from "./controls/Select";
-import { createProduct, getProducts } from "../shared/apiHelpers";
+import { createProduct, getCategories } from "../shared/apiHelpers";
 import { checkString } from "../shared/utils";
 
 function CreateProductForm() {
@@ -56,11 +56,12 @@ function CreateProductForm() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { status, data } = await getProducts();
+      const { status, data } = await getCategories();
       if (status) {
         setCategories(data?.map(({ name }) => name));
       }
     };
+
     fetchData();
   }, []);
 
